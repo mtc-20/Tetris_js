@@ -1,0 +1,167 @@
+.container {
+    display: flex;
+}
+
+.header {
+    height: 120px;
+    text-align: center;
+    /* background-color: teal; */
+    /* background-image: linear-gradient(teal, rgba(0, 128, 128, 0)); */
+    padding: 2px;
+    /* font-family: 'Fredoka One'; */
+    font-family: 'Press Start 2P';
+    font-size: 28px;
+    color: lightblue;
+    text-shadow: 7px 5px 12px rgba(0,0,0,0.3);
+
+    /* Multi coloured gradient Font*/
+    background-color: teal; 
+    background-image: linear-gradient(45deg,
+    orange 16.66%,
+    red 16.66%,
+    red 33.33%,
+    green 33.33%,
+    green 50%,
+    blue 50%,
+    blue 66.66%,
+    purple 66.66%,
+    purple 83.33%);
+    /* background-image: linear-gradient(45deg,
+    #CA4246 16.66%,
+    #E16541 16.66%,
+    #E16541 33.33%,
+    #F18F43 33.33%,
+    #F18F43 50%,
+    #8B9862 50%,
+    #8B9862 66.66%,
+    #476098 66.66%,
+    #476098 83.33%,
+    #A7489B 83.33%
+    ); */
+    background-size: 50%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.grid {
+    width: 220px;
+    height: 440px;
+    background-color: cadetblue;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 5px darkblue;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
+.grid div {
+    height: 20px;
+    width: 20px;
+    border: solid 1px rgb(112, 196, 202);
+    /* margin: -1px    ; */
+    /* background-color: coral; */
+}
+
+.grid div.taken {
+    border: hidden 1px;
+    width: 22px;
+    height: 22px;
+}
+.tetromino {
+    
+    border-radius: 5px;
+}
+
+.mini-grid {
+    margin-left: 30px;
+    margin-top: 30px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: cadetblue;
+    border-radius: 10px;
+    border: solid 5px darkblue;
+}
+
+.mini-grid div {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+#start-button {
+    background-color: darkorange;
+    border: none;  
+}
+
+#restart-button {
+    border: none;
+    font-size: 20px;
+    background-color: goldenrod;
+    margin-top: 10px;
+}
+
+#audio-icon{
+    margin-top: 50px;
+    /* height: 50px; */
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: dotted 2px black;
+
+}
+
+#audio-icon .hovertext{
+    visibility: hidden;
+    text-align: center;
+    background-color: darkslategrey;
+    color: white;
+    border-radius: 3px;
+
+    position: absolute;
+    z-index: 1;
+
+}
+
+
+#audio-icon:hover .hovertext{
+    visibility: visible;
+}
+
+#audio-icon:active{
+    transform: translateY(4px);
+    background-color: gray;
+}
+
+
+.button:hover {
+    box-shadow: 0 12px 16px 0 darkgrey, 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+.button {
+    display: block;
+    width: 120px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: Impact;
+}
+.column {
+    background-image: linear-gradient(cadetblue, rgba(95,158,160, 0));
+    width: 130px;
+    height: 400px;
+    margin-left: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.footer {
+    font-size: smaller;
+    text-align: right;
+}

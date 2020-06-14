@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="eng" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <script src="app.js" charset="utf-8"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Icons (Fontawesome)-->
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface"> <!-- Fonts (Google)-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka+One"> <!-- Fonts (Google)-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P"> <!-- Fonts (Google)-->
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <title>Basic Tetris</title>
+    </head>
+    <audio id="bgm">
+        <source src="Mind-Bender.mp3" type="audio/mpeg"> <!--Taken from https://soundimage.org/puzzle-music/ -->
+    </audio>
+    <body style="background-color: rgba(112, 196, 202, 0.5);">
+        <div class="header"><h1>BASIC TETRIS</h1></div>
+        
+        <!-- <h3 style="background-color: azure; width: 100px; padding: 10px;">Score:<span id="score">0</span></h3> -->
+        <!-- <button id="start-button" class="button">Start/Pause</button>
+        <button id="restart-button" class="button">Restart</button> -->
+        <!-- <p></p> -->
+
+        <div class="container">
+            <div class="column">
+                <h3 style="text-align: center;">Score: <span id="score">0</span></h3>
+                <button id="start-button" class="button">Start/Pause</button>
+                <button id="restart-button" class="button">Restart</button>
+                <button id="audio-icon">
+                    <i class="fas fa-music"></i>
+                    <span class="hovertext">Press m key to toggle audio</span>
+                </button>
+            </div>
+            <div class="grid">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <div class = "taken"></div>
+                <div class = "taken"></div>
+                <div class = "taken"></div>
+                <div class = "taken"></div>
+                <div class = "taken"></div>
+                <div class = "taken"></div>
+                <div class = "taken"></div>
+                <div class = "taken"></div>
+                <div class = "taken"></div>
+                <div class = "taken"></div>
+            </div>
+
+
+
+            
+            <div class = "mini-grid">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+         
+    </body>
+    <footer class="footer">
+        Made by @mtc-20 <img src="LogoMakr_8f5eUt.png" width="25px" height="25px" style="vertical-align: bottom;">
+        <p>Based on Ania Kubow's tutorial</p>
+    </footer>
+</html>
