@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         else if(e.keyCode === 80){
             if(!paused){
                 pauseGame()
-                paused = true
+                
             }
             else{
                 paused = false
@@ -262,6 +262,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         bgm.pause()
         clearInterval(timerID)
         timerID = null
+        paused = true
     }
 
     function playGame(){
@@ -272,6 +273,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         timerID = setInterval(moveDown, timePeriod)
         nextRandom = Math.floor(Math.random()*theTetrominos.length)
         displayShape()
+        paused = false
     }
 
     restartBtn.addEventListener('click', restart())
