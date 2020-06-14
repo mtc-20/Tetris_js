@@ -155,10 +155,46 @@
     width: 130px;
     height: 400px;
     margin-left: 20px;
-    padding: 5px;
+    padding: 2px;
     border-radius: 5px;
     /* display: flex;
     flex-direction: column; */
+}
+
+.virt-keys {
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 4px; */
+    width: 210px;
+    height: 140px;
+    margin-top: 20%;
+    border-radius: 5px;
+    border: ridge 2px goldenrod;
+    background-color: gold;
+    align-content: center;
+    box-shadow: 5px 5px 5px indianred;
+}
+
+.virt-keys div{
+    width: 70px;
+    height: 70px;
+}
+
+.key {
+    width: 60px;
+    height: 60px;
+    align-content: center;
+    margin: 4px;
+    border: outset 1px goldenrod;
+    border-radius: 6px;
+    background-color: rgb(247, 183, 22);
+    /* border: none; */
+
+}
+
+.key:active{
+    transform: translateY(2px);
+    background-color: gray;
 }
 
 .footer {

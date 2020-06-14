@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', () =>{
     const startBtn = document.querySelector('#start-button')
     const restartBtn = document.querySelector('#restart-button')
     const audioIcon = document.querySelector('#audio-icon')
+    const upBtn = document.querySelector('#up-key')
+    const downBtn = document.querySelector('#down-key') 
+    const leftBtn = document.querySelector('#left-key') 
+    const rightBtn = document.querySelector('#right-key') 
 
     // Audio
     const bgm = document.getElementById('bgm')
@@ -140,10 +144,12 @@ document.addEventListener('DOMContentLoaded', () =>{
 
 
     function moveDown(){
-        undraw()
-        currentPosition += width
-        draw()
-        freeze()
+        if (!paused){
+            undraw()
+            currentPosition += width
+            draw()
+            freeze()
+        }
         
     }
 
@@ -171,39 +177,45 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     // Move Tetromino left within grid
     function moveLeft(){
-        undraw()
-        const isAtLeftEdge = current.some(index => (currentPosition + index)%width === 0)
-
-        if (!isAtLeftEdge) currentPosition -= 1
-
-        if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
-            currentPosition +=1
+        if (!paused){
+            undraw()
+            const isAtLeftEdge = current.some(index => (currentPosition + index)%width === 0)
+            
+            if (!isAtLeftEdge) currentPosition -= 1
+            
+            if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
+                currentPosition +=1
+            }
+            draw()
         }
-        draw()
     }
 
     // Move Tetromino right within grid
     function moveRight(){
-        undraw()
-        const isAtRightEdge = current.some(index => (currentPosition + index)%width === width-1)
-
-        if (!isAtRightEdge) currentPosition += 1
-
-        if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
-            currentPosition -=1
+        if(!paused){
+            undraw()
+            const isAtRightEdge = current.some(index => (currentPosition + index)%width === width-1)
+            
+            if (!isAtRightEdge) currentPosition += 1
+            
+            if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
+                currentPosition -=1
+            }
+            draw()
         }
-        draw()
     }
 
     // Rotate Tetromino within grid
     function rotate(){
-        undraw()
-        currentRotation++
-        if (currentRotation === current.length){
-            currentRotation = 0
+        if (!paused){
+            undraw()
+            currentRotation++
+            if (currentRotation === current.length){
+                currentRotation = 0
+            }
+            current = theTetrominos[random][currentRotation]
+            draw()
         }
-        current = theTetrominos[random][currentRotation]
-        draw()
     }
 
     // Display next Tetromino
@@ -264,6 +276,10 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     restartBtn.addEventListener('click', restart())
     audioIcon.addEventListener('click', () => toggleMusic())
+    upBtn.addEventListener('click', () => rotate())
+    downBtn.addEventListener('click', ()=> moveDown())
+    leftBtn.addEventListener('click', ()=> moveLeft())
+    rightBtn.addEventListener('click', () => moveRight())
 
     function clicky(){console.log('icon clciked')}
 
