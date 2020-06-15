@@ -5,7 +5,7 @@
 
 - This is the link to the [YouTube video](https://www.youtube.com/watch?v=rAUn1Lom6dw)
 
-<p align="right"> <img src='LogoMakr_0nVUmr.png' width='75px'> </p> <p align="right"><em>Test Logo</em> </p>
+<p align="right"> <img src='images/LogoMakr_0nVUmr.png' width='75px'> </p> <p align="right"><em>Test Logo</em> </p>
 
 **CONTENTS**
 - [Usage](#usage)
@@ -13,16 +13,16 @@
 - [Changes and Future Improvements](#changes)
 - [Resources and Credits](#resources)
 
-<p align="center"> <img src='screen.png'> </p> <p align="center"><em>Sample</em> </p>
+<p align="center"> <img src='images/screen.png'> </p> <p align="center"><em>Old Sample</em> </p>
 
 ## Usage / INSTALLATION
 Just open the `html` file and you should be able to play the game
 >**NOTE:** This has only been tested on Windows 10 desktop browsers at 100% zoom (the graphics go wonky at lower zooms!)
 
 ### Preview
----
-> Will add link to preview HTML once I figure out how
----
+The game/page can be previewed here: [Tetris_js](https://mtc-20.github.io/Tetris_js/)
+
+~~> Will add link to preview HTML once I figure out how~~
 
 ## Basic Controls
 - Arrow keys to control tetromino. <kbd>Up</kbd> or <kbd>w</kbd> to rotate tetromino
@@ -36,7 +36,7 @@ Just open the `html` file and you should be able to play the game
 - Added code to increase the speed of falling tetrominoes at regular intervals
 - [ ] Layout to be improved further
     - [ ] Try and implement responsive (more CSS)
-    - [ ] Credits/About page
+    - [ ] Credits/About page/menu
 - [ ] **Implement a working <kbd>Restart</kbd> button**
  - At the moment cannot figure out how to 'refresh' the grid without affecting the hidden (*taken*) row
 - [ ] Introduce concept of levels or difficulty
@@ -46,4 +46,6 @@ Just open the `html` file and you should be able to play the game
 - **Icon(s):** *[Font Awesome](https://fontawesome.com/start)*
 - **Music:** [Mind Bender](https://soundimage.org/puzzle-music/) - Puzzle Music from *soundimage*
 - **Logo:** Free logo created at [Logomakr](https://logomakr.com/) and converted to `.ico` using [prodraw](http://www.prodraw.net/favicon/generator.php)
+- **Image(s)**: 
+    - [Abstract Geometric Background Blue](https://onlyvectorbackgrounds.com/abstract-geometric-background-blue/) from *Only Vector Backgrounds*
 - [CSS Cheatsheet](https://www.w3schools.com/css/default.asp)

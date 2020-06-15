@@ -21,12 +21,21 @@ document.addEventListener('DOMContentLoaded', () =>{
     let nextRandom = 0
     let timerID
     let score = 000
+    // const colors = [
+    //     'orange',
+    //     'red',
+    //     'purple',
+    //     'green',
+    //     'blue'
+    // ]
+
     const colors = [
-        'orange',
-        'red',
-        'purple',
-        'green',
-        'blue'
+        'linear-gradient(orange ,rgba(95,158,160, 0.7))',
+        'linear-gradient(red ,rgba(95,158,160, 0.7))',
+        'linear-gradient(purple ,rgba(95,158,160, 0.7))',
+        'linear-gradient(green ,rgba(95,158,160, 0.7))',
+        'linear-gradient(blue ,rgba(95,158,160, 0.7))',
+        
     ]
 
     let timePeriod = 500
@@ -83,7 +92,8 @@ document.addEventListener('DOMContentLoaded', () =>{
     function draw(){
         current.forEach(index => {
             squares[currentPosition + index].classList.add('tetromino')
-            squares[currentPosition + index].style.backgroundColor = colors[random]
+            // squares[currentPosition + index].style.backgroundColor = colors[random]
+            squares[currentPosition + index].style.backgroundImage = colors[random]
         })
     }
     //draw()
@@ -93,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         current.forEach(index => {
             squares[currentPosition + index].classList.remove('tetromino')
             squares[currentPosition + index].style.backgroundColor = ''
+            squares[currentPosition + index].style.backgroundImage = ''
         })
     }
 
@@ -158,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))){
             current.forEach(index => {
                 squares[currentPosition + index].classList.add('taken')
-                squares[currentPosition + index].style.backgroundImage = 'linear-gradient(rgba(0,0,0,0), rgb(255,255,255))'
+                squares[currentPosition + index].style.backgroundImage = 'linear-gradient(rgba(0,0,0,0), rgba(255,255,255))'
             })
 
             // Start new Tetromino
