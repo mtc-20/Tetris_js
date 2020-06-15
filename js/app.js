@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             toggleMusic()
         }
     }
-    document.addEventListener('keyup', control)
+    document.addEventListener('keydown', control)
     
 
 
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
 
     // Display next Tetromino
-    const displaySquares = document.querySelectorAll('.mini-grid div')
+    const displaySquares = document.querySelectorAll('.column .mini-grid div')
     const displayWidth = 4
     const displayIndex = 0
     const upNextTetrominos = [
@@ -246,13 +246,14 @@ document.addEventListener('DOMContentLoaded', () =>{
         displaySquares.forEach(square => {
             square.classList.remove('tetromino')
             square.style.backgroundColor = ''
+            square.style.backgroundImage = ''
         })
 
         // console.log('Displaying next')
 
         upNextTetrominos[nextRandom].forEach(index => {
             displaySquares[displayIndex + index].classList.add('tetromino')
-            displaySquares[displayIndex + index].style.backgroundColor = colors[nextRandom]
+            displaySquares[displayIndex + index].style.backgroundImage = colors[nextRandom]
         })
     }
 
