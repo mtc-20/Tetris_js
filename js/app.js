@@ -13,10 +13,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     const rightBtn = document.querySelector('#right-key') 
 
     // Touch events
-    document.addEventListener('touchstart', ()=>handleStart, false)
-    document.addEventListener('touchmove', handleMove, false)
-    alert('TouchlistenerStart added')
-
+   
     var xDown = null
     var yDown = null
 
@@ -25,13 +22,15 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
 
     function handleStart(evt) {
+        console.log('Detcted')
         const firstTouch = getTouches(evt)[0]
         xDown = firstTouch.clientX
         yDown = firstTouch.clientY
+        console.log(xDown, yDown)
     }
 
     function handleMove(evt) {
-        if (!xDown || yDown) {
+        if (!xDown || !yDown) {
             return
         }
         var xUp = evt.touches[0].clientX
@@ -43,17 +42,20 @@ document.addEventListener('DOMContentLoaded', () =>{
         if(Math.abs(xDiff)> Math.abs(yDiff)) {
             if (xDiff > 0) {
                 console.log('left swipe')
+                moveLeft()
             }
             else {
-                alert('Right')
+                console.log('Right swipe')
+                moveRight()
             }
         }
         else {
             if(yDiff > 0) {
                 console.log('Up swipe')
+                rotate()
             }
             else {
-                alert('Down')
+                console.log('Down')
             }
         }
 
@@ -188,6 +190,11 @@ document.addEventListener('DOMContentLoaded', () =>{
         }
     }
     document.addEventListener('keydown', control)
+
+    document.addEventListener('touchstart', handleStart, false)
+    document.addEventListener('touchmove', handleMove, false)
+    alert('TouchlistenerStart added')
+
     
 
 
