@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     // Touch events
     document.addEventListener('touchstart', handleStart, false)
     document.addEventListener('touchmove', handleMove, false)
+    alert('Touchlisteners added')
 
     var xDown = null
     var yDown = null
