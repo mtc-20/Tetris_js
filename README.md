@@ -25,7 +25,7 @@ This is my first ~~project~~ time with both javascript and CSS, and I think this
   - [Changes](#changes)
   - [Resources](#resources)
 
-<p align="center"> <img src='images/screen.png'> </p> <p align="center"><em>Old Sample</em> </p>
+<p align="center"> <img src='images/screen.png'> </p> <p align="center"><em>Desktop Screenshot</em> </p>
 
 ## Rules
 
