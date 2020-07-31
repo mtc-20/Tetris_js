@@ -19,10 +19,11 @@ This is my first ~~project~~ time with both javascript and CSS, and I think this
 <p align="right"> <img src='images/LogoMakr_0nVUmr.png' width='75px'> </p> <p align="right"><em>Test Logo</em> </p>
 
 **CONTENTS**
-- [Rules](#rules)
-- [Basic Controls](#basic-controls)
-- [Changes and Future Improvements](#changes)
-- [Resources and Credits](#resources)
+- [BASIC TETRIS](#basic-tetris)
+  - [Rules](#rules)
+  - [Basic Controls](#basic-controls)
+  - [Changes](#changes)
+  - [Resources](#resources)
 
 <p align="center"> <img src='images/screen.png'> </p> <p align="center"><em>Old Sample</em> </p>
 
@@ -37,15 +38,15 @@ This is my first ~~project~~ time with both javascript and CSS, and I think this
 
 
 
-- <u>Alternatively use the buttons provided </u>
+- ~~<u>Alternatively use the buttons provided </u>~~
 
 ## Changes
 - Added background music that can be paused
-- Introduced some web fonts and 
-- Changed the layout to have a big top-centred title and all the buttons together on the left 
+- Introduced some web fonts and icons
+- ~~Changed the layout to have a big top-centred title and all the buttons together on the left~~ 
 - Added code to increase the speed of falling tetrominoes at regular intervals
 - [ ] Layout to be improved further
-    - [ ] Try and implement responsive (more CSS)
+    - [x] Try and implement responsive (more CSS)
     - [ ] Credits/About page/menu
 - [ ] **Implement a working <kbd>Restart</kbd> button**
  - At the moment cannot figure out how to 'refresh' the grid without affecting the hidden (*taken*) row

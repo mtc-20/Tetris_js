@@ -2,12 +2,9 @@
     --gridbg:rgb(56, 187, 192)
 }
 
-@media only screen and (orientation: portrait) {
-    body{
-        background-size: auto 100%;
-    }
-    
-}
+
+
+html {font-size: 100%;}
 
 body {
     /* background-color: rgba(112, 196, 202, 0.5); */
@@ -26,6 +23,7 @@ h3 {
     text-align: center;
     font-family: 'Press Start 2P';
     color: whitesmoke;
+    font-size: 0.72rem;
 }
 
 .container {
@@ -34,14 +32,14 @@ h3 {
 
 .header {
     height: 120px;
-    margin-left: -15%;
+    /* margin-left: -15%; */
     text-align: center;
     /* background-color: teal; */
     /* background-image: linear-gradient(teal, rgba(0, 128, 128, 0)); */
     padding: 2px;
     /* font-family: 'Fredoka One'; */
     font-family: 'Press Start 2P';
-    font-size: 28px;
+    font-size: 1rem;
     color: lightblue;
     text-shadow: 7px 5px 12px rgba(0,0,0,0.3);
 
@@ -130,7 +128,7 @@ h3 {
 
 #restart-button {
     border: none;
-    font-size: 20px;
+    /* font-size: 2rem; */
     background-color: goldenrod;
     margin-top: 10px;
 }
@@ -142,7 +140,7 @@ h3 {
     cursor: pointer;
     padding: 5px;
     border-bottom: dotted 2px black;
-    margin-left: 50px;
+    margin-left: 2.5rem;
     margin-bottom: 10px;
 }
 
@@ -179,24 +177,29 @@ h3 {
     text-align: center;
     padding: 10px;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 1rem;
     cursor: pointer;
     font-family: Impact;
     margin-left: 4px;
 }
 .column {
     background-image: linear-gradient(cadetblue, rgba(95,158,160, 0));
-    width: 130px;
+    width: 130*0.06rem;
     height: 400px;
     margin-top: 1%;
     margin-left: 5%;
-    padding: 2px;
+    /* padding: 2rem; */
     border-radius: 5px;
     /* display: flex;
     flex-direction: column; */
 }
 
-.virt-keys {
+.footer {
+    font-size: 0.7rem;
+    text-align: right;
+}
+
+/* .virt-keys {
     display: flex;
     flex-wrap: wrap;
     /* padding: 4px; */
@@ -212,9 +215,9 @@ h3 {
     background-color: gold;
     align-content: center;
     box-shadow: 5px 5px 5px indianred;
-}
+} */
 
-.virt-keys div{
+/* .virt-keys div{
     width: 70px;
     height: 70px;
 }
@@ -227,7 +230,7 @@ h3 {
     border-radius: 6px;
     background-color: rgb(247, 183, 22);
     /* border: none; */
-    font-family: 'Press Start 2P';
+    /* font-family: 'Press Start 2P';
     font-size: xx-small;
 
 }
@@ -235,9 +238,183 @@ h3 {
 .key:active{
     transform: translateY(2px);
     background-color: gray;
+} */
+
+
+
+/* ------------------------------
+            Media Queries 
+    -----------------------------*/
+
+
+@media only screen and (orientation: portrait) {
+    body{
+        background-size: auto 100%;
+        height: 100%;
+    }
+
+    html{
+        height: 100%;
+    }
+    
 }
 
-.footer {
-    font-size: x-small;
-    text-align: right;
+
+
+@media screen and (max-width: 440px) {
+    #primary {width: 100%;}
+    #secondary {width: 100%; margin: 0; border: none;}
+}
+
+@media screen and (max-width: 770px) {
+    body{font-size: 1rem;
+    margin: 0;}
+
+    .column {
+        width: 6rem;
+        height: 50%;
+        padding: 0;
+        margin-top: 3.8rem;
+        margin-left: 0;
+        margin-right: 0.2rem;
+    }
+
+    .button {
+        display: block;
+        width: max-content;
+        text-align: center;
+        padding: 0.8rem;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        font-family: Impact;
+        margin-left: 0.2rem;
+    }
+
+    #restart-button {
+        /* margin-left: 0.5rem; */
+        width: 5.5rem;
+    }
+
+    .mini-grid {
+        margin-left: 0.2rem;
+    }
+
+    .grid {
+        margin-left: 0.1rem;
+    }
+
+}
+
+
+
+
+    /* Tablets */
+@media only screen and (min-width: 960px) (max-width: 1048px) {
+    body{font-size: 2rem;
+    margin: 0;}
+
+    h3 {font-size: 2.8rem;}
+
+    .header {
+        height: 150px;
+        font-size: 4vw;
+    }
+
+    .container {
+        margin-top: 5rem;
+        height: 1000px;
+    }
+
+    .column {
+        width: 20rem;
+        height: 820px;
+        padding: 0;
+        /* margin-top: 3.8rem; */
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .button {
+        display: block;
+        width: max-content;
+        text-align: center;
+        padding: 0.8rem;
+        border-radius: 10px;
+        font-size: 3rem;
+        cursor: pointer;
+        font-family: Impact;
+        margin-left: 2rem;
+    }
+
+    #restart-button {
+        /* margin-left: 0.5rem; */
+        width: 16rem;
+    }
+
+    #audio-icon{
+        width: 60px;
+        height: 60px;
+        margin-top: 30px;
+        /* height: 50px; */
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 0px;
+        border-bottom: dotted 3px black;
+        margin-left: 8rem;
+        margin-bottom: 10px;
+    }
+
+    .mini-grid {
+        margin-left: 25%;
+        margin-top: 1px;
+        width: 160px;
+        height: 160px;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: var(--gridbg);
+        border-radius: 10px;
+        border: inset 5px var(--gridbg);
+    }
+    
+    .mini-grid div {
+        width: 240px;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+
+    .grid {
+        width: 420px;
+        height: 840px;
+        background-color: rgb(56, 187, 192);
+        display: flex;
+        flex-wrap: wrap;
+        border: inset 5px var(--gridbg);
+        border-radius: 10px;
+        margin-left: 10%;
+    }
+    
+    .grid div {
+        height: 40px;
+        width: 40px;
+        border: ridge 1px rgb(120, 214, 221);
+        border-radius: 5px;
+        /* margin: -1px    ; */
+        /* background-color: coral; */
+    }
+    
+    .grid div.taken {
+        border: hidden 1px;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    .footer {
+        /* width: 100px; */
+        height: 5%;
+        /* font-size: 1rem; */
+        text-align: right;
+    }
 }
