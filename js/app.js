@@ -13,7 +13,52 @@ document.addEventListener('DOMContentLoaded', () =>{
     const rightBtn = document.querySelector('#right-key') 
 
     // Touch events
-    // document.addEventListener('touchstart', handle)
+    document.addEventListener('touchstart', handleStart, false)
+    document.addEventListener('touchmove', handleMove, false)
+
+    var xDown = null
+    var yDown = null
+
+    function getTouches(evt) {
+        return evt.touches
+    }
+
+    function handleStart(evt) {
+        const firstTouch = getTouches(evt)[0]
+        xDown = firstTouch.clientX
+        yDown = firstTouch.clientY
+    }
+
+    function handleMove(evt) {
+        if (!xDown || yDown) {
+            return
+        }
+        var xUp = evt.touches[0].clientX
+        var yUp = evt.touches[0].clientY
+
+        var xDiff = xDown - xUp
+        var yDiff = yDown - yUp
+
+        if(Math.abs(xDiff)> Math.abs(yDiff)) {
+            if (xDiff > 0) {
+                console.log('left swipe')
+            }
+            else {
+                alert('Right')
+            }
+        }
+        else {
+            if(yDiff > 0) {
+                console.log('Up swipe')
+            }
+            else {
+                alert('Down')
+            }
+        }
+
+        xDown = null
+        yDown = null
+    }
 
     // Audio
     const bgm = document.getElementById('bgm')
@@ -293,10 +338,10 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     restartBtn.addEventListener('click', restart())
     audioIcon.addEventListener('click', () => toggleMusic())
-    upBtn.addEventListener('click', () => rotate())
-    downBtn.addEventListener('click', ()=> moveDown())
-    leftBtn.addEventListener('click', ()=> moveLeft())
-    rightBtn.addEventListener('click', () => moveRight())
+    // upBtn.addEventListener('click', () => rotate())
+    // downBtn.addEventListener('click', ()=> moveDown())
+    // leftBtn.addEventListener('click', ()=> moveLeft())
+    // rightBtn.addEventListener('click', () => moveRight())
 
     function clicky(){console.log('icon clciked')}
 
