@@ -203,14 +203,14 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     /* padding: 4px; */
-    width: 210px;
+    /* width: 210px;
     height: 140px;
     margin-top: 20%;
     margin-left: 7.5%;
-    border-radius: 12px;
+    border-radius: 12px; */
     /* border: outset 5px goldenrod;
     background-color: gold; */
-
+/* 
     border: none;
     background-color: gold;
     align-content: center;
@@ -310,7 +310,7 @@ h3 {
 
 
     /* Tablets */
-@media only screen and (min-width: 960px) (max-width: 1048px) {
+@media only screen and (min-width: 960px) and (max-width: 1048px) {
     body{font-size: 2rem;
     margin: 0;}
 

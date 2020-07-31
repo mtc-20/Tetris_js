@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () =>{
     const leftBtn = document.querySelector('#left-key') 
     const rightBtn = document.querySelector('#right-key') 
 
+    // Touch events
+    // document.addEventListener('touchstart', handle)
+
     // Audio
     const bgm = document.getElementById('bgm')
     bgm.loop = true
@@ -345,7 +348,15 @@ document.addEventListener('DOMContentLoaded', () =>{
             scoreDisplay.innerHTML = 'end'
             clearInterval(timerID)
             bgm.pause()
-            alert('Game Over! \n Score: '+score)
+            alert('Game Over!')
+            player = prompt('Please enter name: ', 'mtc')
+            if (player == null || player == '') {
+                txt = 'Player cancelled prompt!'
+            }
+            else {
+                txt = player + ' scored ' + score
+            }
+            alert(txt)
             
 
         }
