@@ -41,21 +41,22 @@ document.addEventListener('DOMContentLoaded', () =>{
 
         if(Math.abs(xDiff)> Math.abs(yDiff)) {
             if (xDiff > 0) {
-                console.log('left swipe')
+                // console.log('left swipe')
                 moveLeft()
             }
             else {
-                console.log('Right swipe')
+                // console.log('Right swipe')
                 moveRight()
             }
         }
         else {
             if(yDiff > 0) {
-                console.log('Up swipe')
+                // console.log('Up swipe')
                 rotate()
             }
             else {
-                console.log('Down')
+                // console.log('Down')
+                moveDown()
             }
         }
 
@@ -193,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     document.addEventListener('touchstart', handleStart, false)
     document.addEventListener('touchmove', handleMove, false)
-    alert('TouchlistenerStart added')
+    // alert('TouchlistenerStart added')
 
     
 

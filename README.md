@@ -51,6 +51,7 @@ This is my first ~~project~~ time with both javascript and CSS, and I think this
 - [ ] **Implement a working <kbd>Restart</kbd> button**
  - At the moment cannot figure out how to 'refresh' the grid without affecting the hidden (*taken*) row
 - [ ] Introduce concept of levels or difficulty
+- [ ] Need to clean out the code **A LOT**
 
 ## Resources
 - **Fonts:** [Abril Fatface](https://fonts.google.com/specimen/Abril+Fatface), [Press Play 2P](https://fonts.google.com/specimen/Press+Start+2P?category=Serif,Sans+Serif,Display,Monospace#pairings) and others from *Google fonts*
