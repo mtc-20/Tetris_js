@@ -47,7 +47,8 @@ This is my first ~~project~~ time with both javascript and CSS, and I think this
 - Added code to increase the speed of falling tetrominoes at regular intervals
 - [ ] Layout to be improved further
     - [x] Try and implement responsive (more CSS)
-    - [ ] Credits/About page/menu
+    - [x] Credits/Info page/menu
+    - [ ] better design/colour scheme
 - [ ] **Implement a working <kbd>Restart</kbd> button**
  - At the moment cannot figure out how to 'refresh' the grid without affecting the hidden (*taken*) row
 - [ ] Introduce concept of levels or difficulty
