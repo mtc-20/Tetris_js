@@ -7,10 +7,25 @@ document.addEventListener('DOMContentLoaded', () =>{
     const startBtn = document.querySelector('#start-button')
     const restartBtn = document.querySelector('#restart-button')
     const audioIcon = document.querySelector('#audio-icon')
-    const upBtn = document.querySelector('#up-key')
-    const downBtn = document.querySelector('#down-key') 
-    const leftBtn = document.querySelector('#left-key') 
-    const rightBtn = document.querySelector('#right-key') 
+    const infoBtn = document.querySelector('#info-button')
+    const overlayBtn = document.querySelector('#overlay')
+    
+    
+    // Info Overlay
+    overlayBtn.addEventListener('click', () => overlayOff())
+    infoBtn.addEventListener('click', () => overlayOn())
+    
+    function overlayOn() {
+        console.log('on')
+        document.getElementById('overlay').style.display = 'block';
+    }
+    function overlayOff() {
+        console.log('off')
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    
+    
 
     // Touch events
    
@@ -22,11 +37,10 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
 
     function handleStart(evt) {
-        console.log('Detcted')
         const firstTouch = getTouches(evt)[0]
         xDown = firstTouch.clientX
         yDown = firstTouch.clientY
-        console.log(xDown, yDown)
+        // console.log(xDown, yDown)
     }
 
     function handleMove(evt) {
@@ -83,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     const colors = [
         'linear-gradient(orange ,rgba(95,158,160, 0.7))',
+        'linear-gradient(indigo ,rgba(95,158,160, 0.7))',
         'linear-gradient(red ,rgba(95,158,160, 0.7))',
         'linear-gradient(purple ,rgba(95,158,160, 0.7))',
         'linear-gradient(green ,rgba(95,158,160, 0.7))',
@@ -100,6 +115,13 @@ document.addEventListener('DOMContentLoaded', () =>{
         [width, width+1, width+2, width*2+2],
         [1, width+1, width*2+1, width*2],
         [width, width*2, width*2+1, width*2+2]
+    ]
+
+    const lTetrominoR = [
+        [0, 1, width+1, width*2+1],
+        [width, width+1, width+2, width*2],
+        [1, width+1, width*2+1, width*2+2],
+        [width+2, width*2, width*2+1, width*2+2]
     ]
 
     const oTetromino = [
@@ -130,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         [width, width+1, width+2, width+3]
     ]
 
-    const theTetrominos = [lTetromino,iTetromino,zTetromino,oTetromino,tTetromino]
+    const theTetrominos = [lTetromino,lTetrominoR,iTetromino,zTetromino,oTetromino,tTetromino]
 
     // Set variables
     let currentPosition = 3
@@ -194,9 +216,6 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     document.addEventListener('touchstart', handleStart, false)
     document.addEventListener('touchmove', handleMove, false)
-    // alert('TouchlistenerStart added')
-
-    
 
 
     function toggleMusic(){
@@ -289,9 +308,10 @@ document.addEventListener('DOMContentLoaded', () =>{
     // Display next Tetromino
     const displaySquares = document.querySelectorAll('.column .mini-grid div')
     const displayWidth = 4
-    const displayIndex = 0
+    const displayIndex = 1
     const upNextTetrominos = [
         [1, displayWidth+1, displayWidth*2+1, 2], //l
+        [1, displayWidth+1, displayWidth*2+1, 0], //lR
         [1, displayWidth+1, displayWidth*2+1, displayWidth*3+1], //i
         [0, 1, displayWidth+1, displayWidth+2], //z
         [0, 1, displayWidth, displayWidth+1], //o
@@ -347,6 +367,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     restartBtn.addEventListener('click', restart())
     audioIcon.addEventListener('click', () => toggleMusic())
+
     // upBtn.addEventListener('click', () => rotate())
     // downBtn.addEventListener('click', ()=> moveDown())
     // leftBtn.addEventListener('click', ()=> moveLeft())

@@ -109,7 +109,7 @@ h1 {
 }
 
 .mini-grid {
-    margin-left: 18px;
+    margin-left: 19px;
     margin-top: 1px;
     width: 80px;
     height: 80px;
@@ -159,9 +159,42 @@ h1 {
     background-color: gray;
 }
 
+#info-button{
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0.5rem;
+    /* height: 50px; */
+    border-radius: 45%;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 2.5rem;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 90%;
+    background-color: rgba(255,255,255,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#text {
+    position: absolute;
+    top: 25%;
+    left: 48%;
+    color: black;
+    font-family: Impact;
+    font-size: 1.5rem;
+    text-align: justify;
+    -ms-transform: translate(-50%,-50%);
+}
 
 .button:hover {
-    box-shadow: 0 12px 16px 0 rgba(15, 70, 141, 0.26), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(15, 70, 141, 0.26), 0 17px 50px 0 rgba(0,0,0,0.19); 
   }
 
 .button {
@@ -173,7 +206,7 @@ h1 {
     font-size: 1rem;
     cursor: pointer;
     font-family: Impact;
-    margin-left: 2px;
+    margin-left: 0.3rem;
     border: outset 0.3rem;
 }
 
@@ -191,12 +224,14 @@ h1 {
 
 .column {
     background-image: linear-gradient(cadetblue, rgba(95,158,160, 0));
-    width: 130*0.06rem;
+    width: 8rem;
     height: 400px;
     margin-top: 1%;
     margin-left: 5%;
     /* padding: 2rem; */
     border-radius: 5px;
+    align-items: center;
+    align-items: center;
     /* display: flex;
     flex-direction: column; */
 }
@@ -278,7 +313,7 @@ h1 {
     margin: 0;}
 
     .column {
-        width: 6rem;
+        width: 6.5rem;
         height: 50%;
         padding: 0;
         margin-top: 3.8rem;
@@ -288,28 +323,34 @@ h1 {
 
     .button {
         display: block;
-        width: max-content;
+        width: 5.6rem;
         text-align: center;
         /* padding: 0.8rem; */
         /* border-radius: 10px; */
         font-size: 0.8rem;
         cursor: pointer;
         font-family: Impact;
-        margin-left: 0.2rem;
+        margin-left: 0.1rem;
         
     }
 
-    #restart-button {
-        /* margin-left: 0.5rem; */
-        width: 5.5rem;
-    }
 
     .mini-grid {
-        margin-left: 0.2rem;
+        margin-left: 0.4rem;
     }
 
     .grid {
         margin-left: 0.4rem;
+    }
+
+    #overlay {
+        background-color: rgba(255, 255, 255, 0.90);
+    }
+
+    #text {
+        top: 10%;
+        left: 5%;
+        font-size: 1.2rem;
     }
 
 }
