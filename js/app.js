@@ -423,7 +423,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             scoreDisplay.innerHTML = 'end'
             clearInterval(timerID)
             bgm.pause()
-            alert('Game Over!')
+            // alert('Game Over!')
             player = prompt('Please enter name: ', 'mtc')
             if (player == null || player == '') {
                 txt = 'Player cancelled prompt!'
@@ -432,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () =>{
                 txt = player + ' scored ' + score
             }
             alert(txt)
-            
+            location.reload()
 
         }
     }
